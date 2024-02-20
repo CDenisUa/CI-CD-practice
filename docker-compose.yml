@@ -3,6 +3,7 @@ services:
     build:
       context: ./frontend/next-js
       dockerfile: Dockerfile
+    image: yourusername/nextjs-app:latest
     ports:
       - "3000:3000"
     volumes:

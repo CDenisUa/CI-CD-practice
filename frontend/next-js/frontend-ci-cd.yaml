@@ -1,0 +1,39 @@
+name: Frontend CI/CD
+
+on:
+  push:
+    paths:
+      - 'frontend/next-js/**'
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '20.11.0'
+
+      - name: Install dependencies
+        run: cd frontend/next-js && npm install
+
+      - name: Run tests
+        run: cd frontend/next-js && npm test
+
+      - name: Build
+        run: cd frontend/next-js && npm run build
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Build and Push Docker image
+        run: |
+          cd frontend/next-js
+          docker build -t cdenys/nextjs-app:latest .
+          docker push cdenys/nextjs-app:latest
+     
