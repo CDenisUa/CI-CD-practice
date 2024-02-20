@@ -27,3 +27,15 @@ jobs:
 
       - name: Build
         run: cd backend && pnpm run build
+
+      - name: Login to Docker Hub
+        uses: docker/login-action@v1
+        with:
+          username: ${{ secrets.DOCKER_HUB_USERNAME }}
+          password: ${{ secrets.DOCKER_HUB_PASSWORD }}
+
+      - name: Build and Push Docker image
+        run: |
+          cd frontend/next-js
+          docker build -t cdenys/nestjs-app:latest .
+          docker push cdenys/nestjs-app:latest
