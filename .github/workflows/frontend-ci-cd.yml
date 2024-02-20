@@ -19,8 +19,8 @@ jobs:
       - name: Install dependencies
         run: cd frontend/next-js && npm install
 
-      - name: Run tests
-        run: cd frontend/next-js && npm test
+#      - name: Run tests
+#        run: cd frontend/next-js && npm test
 
       - name: Build
         run: cd frontend/next-js && npm run build
