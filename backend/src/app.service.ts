@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'CDenys NEST222!';
+    return 'CDenys test!';
   }
 }
