@@ -9,10 +9,10 @@ jobs:
   build-and-deploy:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3  # Обновлено до последней версии
+      - uses: actions/checkout@v3
 
       - name: Setup Node.js
-        uses: actions/setup-node@v3  # Обновлено до последней версии
+        uses: actions/setup-node@v3
         with:
           node-version: "20.11.0"
           cache: "pnpm"
