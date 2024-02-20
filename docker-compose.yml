@@ -3,7 +3,6 @@ services:
     build:
       context: ./frontend/next-js
       dockerfile: Dockerfile
-    image: fullstack/nextjs-app
     ports:
       - "3000:3000"
     volumes:
