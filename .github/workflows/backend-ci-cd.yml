@@ -36,6 +36,6 @@ jobs:
 
       - name: Build and Push Docker image
         run: |
-          cd frontend/next-js
+          cd backend
           docker build -t cdenys/nestjs-app:latest .
           docker push cdenys/nestjs-app:latest
