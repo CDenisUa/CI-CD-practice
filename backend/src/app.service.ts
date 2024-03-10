@@ -3,6 +3,6 @@ import { Injectable } from '@nestjs/common';
 @Injectable()
 export class AppService {
   getHello(): string {
-    return 'This is empty page for testing CI/CD';
+    return 'This is CDenys';
   }
 }

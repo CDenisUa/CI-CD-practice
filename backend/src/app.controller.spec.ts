@@ -16,7 +16,7 @@ describe('AppController', () => {
 
   describe('root', () => {
     it('should return "This is empty page for testing CI/CD"', () => {
-      expect(appController.getHello()).toBe('This is empty page for testing CI/CD');
+      expect(appController.getHello()).toBe('This is CDenys');
     });
   });
 });
