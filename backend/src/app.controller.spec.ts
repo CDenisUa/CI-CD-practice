@@ -15,8 +15,8 @@ describe('AppController', () => {
   });
 
   describe('root', () => {
-    it('should return "This is last test of working CI/CD"', () => {
-      expect(appController.getHello()).toBe('This is last test of working CI/CD');
+    it('should return "CDenys"', () => {
+      expect(appController.getHello()).toBe('CDenys');
     });
   });
 });
