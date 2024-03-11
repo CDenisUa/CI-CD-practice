@@ -4,9 +4,8 @@ services:
       context: ./frontend/next-js
       dockerfile: Dockerfile
     ports:
-      - "3000:3000"
+      - "3051:3000"
     volumes:
-      - ./frontend/next-js:/app
       - /app/node_modules
 
   nestjs-app:
@@ -14,9 +13,8 @@ services:
       context: ./backend
       dockerfile: Dockerfile
     ports:
-      - "3050:3050"
+      - "3052:3050"
     volumes:
-      - ./backend:/app
       - /app/node_modules
   postgres:
     image: postgres:latest
